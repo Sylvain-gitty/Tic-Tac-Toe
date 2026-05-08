@@ -19,11 +19,12 @@ def playersmove():
 
     print("Select a position:")
     position = input()
-    if str.isdigit(position) and int(position) in (board):
-        #if not position in {"X", "O"}:
-        #   print ("Please enter X or O:")
+    turn_number=4  # turn_number has to be a counter in the loop
+    if str.isdigit(position) and int(position) in (board):        
         #else: #update board
-        board[int(position)] = "X" # who is the first player?
+        if turn_number % 2 == 0: sign = "X" 
+        else: sign = "O"
+        board[int(position)] = sign
         display_board(board)
 
     else:
