@@ -23,18 +23,40 @@ def playersmove()
  # Check within the grid if values of row/columns/diegonales are the same and not empty, then we have a winner.
  #break the loop, print "winner etc"
 
- def checkwin()=
-    if(grid[1] == grid[2] == grid[3]):
-    print("It's a win!") 
-    return True 
-    elif(grid[4] == grid[5] == grid[6]):
+ def checkwin(grid):
+    if grid[1] == grid[2] == grid[3] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
     
-    Checkif(grid[7] == grid[8] == grid[9] != "
-            #ETC FOR EVERY POSITIONS
-    return True
-    if True:
-        print("We have a winner! Do you want to play again?"[y,n]) # If no input  for 1 minute, close the game
-        break
+    elif grid[4] == grid[5] == grid[6] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+ 
+    elif grid[7] == grid[8] == grid[9] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+    
+    elif grid[1] == grid[4] == grid[7] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+    
+    elif grid[2] == grid[5] == grid[8] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+    
+    elif grid[3] == grid[6] == grid[9] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+    
+    elif grid[1] == grid[5] == grid[9] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+    
+    elif grid[3] == grid[5] == grid[7] in ["X", "O"]:
+        print("It's a win!") 
+        return True 
+    else:
+        return False
         
 
  # DRAW CONDITIONS:
@@ -45,8 +67,17 @@ def checkdraw(grid):
         return False
     # check if every cell is filled
     for position in grid:
-        if grid[position] not in ["X" OR "0"]:
+        if grid[position] not in ["X" OR "O"]:
             return False
     # If we reach here, it's a draw
     print("It's a draw!")
     return True
+
+# PALY AGIAN
+def play_again():
+    choice = input("Do you want to play again? (y/n): ").lower().strip()
+    if choice == "y":
+        return True
+    else:
+        print("Game Over. Thanks for playing!")
+        sys.exit()
