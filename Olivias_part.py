@@ -19,7 +19,16 @@ def playersmove():
 
     print("Select a position:")
     position = input()
-    #if str.isdigit(position):
+    if str.isdigit(position) and int(position) in (board):
+        #if not position in {"X", "O"}:
+        #   print ("Please enter X or O:")
+        #else: #update board
+        board[int(position)] = "X" # who is the first player?
+        display_board(board)
+
+    else:
+        print("Position is not available or is not a digit:")
+    return        
 
     
 
