@@ -1,19 +1,17 @@
-# Common Tic Tac Toe Implementation
-# def 
+# Function for:
+# 1. creating a 3x3 dictionary for the game board, 
+# 2. displaying the updated board 
+# by Olivia 8.5.2026
 
-#Pseudocode Time:
-#1. Create a 3x3 dictionary for the game board.
-def create_dic():
-    grid = {1: " ", 2: " ", 3: " ",  # WE NEED TO ADD THE VALUES FOR VISUAL EFFECT FOR THE USER
-            4: " ", 5: " ", 6: " ",
-            7: " ", 8: " ", 9: " "}
-    return grid
-#2. Define a function to display the game board.
 def display_board(grid):
-    print_board() # We want each cell to be surrounded by a border, so we will use "|" and "-" to create the grid lines.
+    board = (f"|{grid[1]}|{grid[2]}|{grid[3]}|\n"
+             f"|{grid[4]}|{grid[5]}|{grid[6]}|\n"
+             f"|{grid[7]}|{grid[8]}|{grid[9]}|")
+    print(board)
+    
 
 #3. Define a function to handle player input and update the game board accordingly.
-def playersmove()
+def playersmove():
         #ASking for the user input and adding the input to the grid
         # Check if the value is X or O , if yes, ask for new input with print "somebody already played here"
         # Check if the value is outside of range, and ask for new input , print (its outside the board)
