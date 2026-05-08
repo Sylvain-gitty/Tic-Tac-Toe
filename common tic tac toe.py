@@ -17,28 +17,34 @@ def playersmove():
         # Check if the value is outside of range, and ask for new input , print (its outside the board)
         # Assign X for the fist plyer and O for the second player
 
-    print("Select a position:")
-    position = input()
-    #if str.isdigit(position):
+# WIN CONDITIONS:
+ # Check within the grid if values of row/columns/diegonales are the same and not empty, then we have a winner.
+ #break the loop, print "winner etc"
 
+ def checkwin()=
+    if(grid[1] == grid[2] == grid[3]):
+    print("It's a win!") 
+    return True 
+    elif(grid[4] == grid[5] == grid[6]):
     
+    Checkif(grid[7] == grid[8] == grid[9] != "
+            #ETC FOR EVERY POSITIONS
+    return True
+    if True:
+        print("We have a winner! Do you want to play again?"[y,n]) # If no input  for 1 minute, close the game
+        break
+        
 
-# Function for... (choosing a player?)
-
-
-# ... write as many functions as you need
-
-
-# Tic-tac-toe game
-#if __name__ == "__main__":
-
-    # Start a new round of Tic-tac-toe
-    print("Welcome to a new round of Tic-Tac-Toe! \n")
-
-#creates first board
-board= {1 : '1', 2 : '2', 3: '3', 4 : '4', 5 : '5', 
-         6 : '6', 7 : '7',  8 : '8', 9 : '9'}
-
-display_board(board)
-
-playersmove()
+ # DRAW CONDITIONS:
+    # Check if all cells are filled and no winner, then we have a draw.
+def checkdraw(grid):
+    # check if there is a winner
+    if checkwin(grid):
+        return False
+    # check if every cell is filled
+    for position in grid:
+        if grid[position] not in ["X" OR "0"]:
+            return False
+    # If we reach here, it's a draw
+    print("It's a draw!")
+    return True
