@@ -55,7 +55,7 @@ def check_win():
     if field[3] == field[6] == field[9]:
         return field[3]
     # Diagonale Prüfen
-    if field[1] == field[5] == field[8]:
+    if field[1] == field[5] == field[9]:
         return field[1]
     if field[3] == field[5] == field[7]:
         return field[3]
@@ -65,16 +65,21 @@ def check_draw():
     if field[1] != "1" and field[2] != "2" and field[3] != "3" and field[4] != "4" and field[5] != "5" and \
         field[6] != "6" and field[7] != "7" and field[8] != "8" and field[9] != "9":
         return True
+    
 
 
 while run:
     print_field()
     player_move = next_move()   # Keine Namens-Kollision, da next_move oben in anderm Bereich
     field[player_move] = active_player
-    check_draw()
+    draw = check_draw()
     winner = check_win()    # Der wert des Spielers der gewonnen hat wird übergeben
     if winner:  # Wenn hier kein leerer String übergeben wird, ist WINNER automatisch TRUE
         print("Spieler " + winner + " hat gewonnen")
+        run = False
+       
+    elif draw:
+        print("Das Spiel ist unentschieden!")
         run = False
     change_player()
 
