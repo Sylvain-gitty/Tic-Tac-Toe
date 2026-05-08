@@ -24,18 +24,29 @@ def playersmove()
  #break the loop, print "winner etc"
 
  def checkwin()=
-    Checkif(grid[1] == grid[2] == grid[3] != " ") or
-    Checkif(grid[4] == grid[5] == grid[6] != " ") or
+    if(grid[1] == grid[2] == grid[3]):
+    print("It's a win!") 
+    return True 
+    elif(grid[4] == grid[5] == grid[6]):
+    
     Checkif(grid[7] == grid[8] == grid[9] != "
             #ETC FOR EVERY POSITIONS
     return True
     if True:
         print("We have a winner! Do you want to play again?"[y,n]) # If no input  for 1 minute, close the game
         break
+        
+
  # DRAW CONDITIONS:
     # Check if all cells are filled and no winner, then we have a draw.
-def checkdraw():
-    checkif (grid full) and WIN condition False
+def checkdraw(grid):
+    # check if there is a winner
+    if checkwin(grid):
+        return False
+    # check if every cell is filled
+    for position in grid:
+        if grid[position] not in ["X" OR "0"]:
+            return False
+    # If we reach here, it's a draw
+    print("It's a draw!")
     return True
-    print ("Its a draw, start again?"[y,n]) # If no input  for 1 minute, close the game
-    # variables y/n needs to be define and either close the script or rerun it
